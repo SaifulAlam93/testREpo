@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/admin/home">
+      <i class="fas fa-users-cog me-2"></i>Admin Portal
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="adminNavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/home" routerLinkActive="active" 
+             [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fas fa-home me-1"></i>Admin Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/dashboard" routerLinkActive="active">
+            <i class="fas fa-chart-line me-1"></i>Dashboard
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="adminManage" role="button" data-bs-toggle="dropdown">
+            <i class="fas fa-database me-1"></i>Manage
+          </a>
+          <ul class="dropdown-menu">
+            <li><h6 class="dropdown-header">User Management</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-users me-2"></i>All Users</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-user-plus me-2"></i>Add User</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><h6 class="dropdown-header">System</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-cogs me-2"></i>Settings</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-shield-alt me-2"></i>Security</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="adminReports" role="button" data-bs-toggle="dropdown">
+            <i class="fas fa-chart-bar me-1"></i>Reports
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"><i class="fas fa-chart-pie me-2"></i>Analytics</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-file-invoice me-2"></i>Audit Logs</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-download me-2"></i>Export Data</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="#">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span class="badge bg-warning text-dark ms-1">3</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-bell"></i>
+            <span class="badge bg-danger ms-1">12</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="adminProfile" role="button" data-bs-toggle="dropdown">
+            <i class="fas fa-user-shield me-1"></i>Admin User
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog me-2"></i>Admin Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h me-2"></i>System Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item text-warning" routerLink="/home">
+                <i class="fas fa-sign-out-alt me-2"></i>Exit Admin Portal
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

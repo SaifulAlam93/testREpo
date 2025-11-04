@@ -1,0 +1,264 @@
+.attendance-sheet-container {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  h2 {
+    color: #2d3748;
+    margin: 0;
+  }
+}
+
+.controls {
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  label {
+    font-weight: 600;
+    color: #374151;
+  }
+
+  select {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background: white;
+  }
+}
+
+.clear-btn, .export-btn {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #f9fafb;
+  }
+}
+
+.export-btn {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+
+  &:hover {
+    background: #059669;
+  }
+}
+
+.sheet-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.attendance-sheet {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  font-size: 14px;
+
+  th, td {
+    border: 1px solid #e5e7eb;
+    padding: 8px 12px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #374151;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .sticky-header {
+    position: sticky;
+    left: 0;
+    background: #f8fafc;
+    z-index: 20;
+  }
+
+  .sticky-cell {
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 5;
+  }
+
+  .dates-header {
+    background: #e0f2fe;
+  }
+
+  .summary-header {
+    background: #f0fdf4;
+  }
+
+  .date-header {
+    font-size: 12px;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    min-width: 30px;
+    background: #f0f9ff;
+  }
+
+  .data-row:hover {
+    background: #f9fafb;
+    
+    .sticky-cell {
+      background: #f3f4f6;
+    }
+  }
+
+  .employee-name {
+    font-weight: 600;
+    text-align: left;
+    min-width: 150px;
+  }
+
+  .department {
+    text-align: left;
+    min-width: 120px;
+    color: #6b7280;
+  }
+
+  .attendance-cell {
+    font-weight: 600;
+    color: white;
+    min-width: 40px;
+    cursor: default;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .summary-cell {
+    font-weight: 600;
+    
+    &.present {
+      background: #dcfce7;
+      color: #166534;
+    }
+    
+    &.absent {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+  }
+
+  .summary-count {
+    font-weight: 600;
+    
+    &.present {
+      color: #166534;
+    }
+    
+    &.absent {
+      color: #991b1b;
+    }
+  }
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.legend {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 6px;
+
+  h4 {
+    margin: 0 0 10px 0;
+    color: #374151;
+  }
+
+  .legend-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    display: inline-block;
+
+    &.present { background: #10b981; }
+    &.absent { background: #ef4444; }
+    &.late { background: #f59e0b; }
+    &.half-day { background: #8b5cf6; }
+    &.no-data { background: #6b7280; }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .attendance-sheet-container {
+    padding: 10px;
+  }
+
+  .sheet-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    justify-content: space-between;
+  }
+
+  .legend .legend-items {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

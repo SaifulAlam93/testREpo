@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "name": "Mechanical Keyboard",
+      "price": 4999,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3"
+    },
+    {
+      "name": "Tiger 22",
+      "price": 50000,
+      "category": "Bengle",
+      "image": "https://kinsta.com/wp-content/uploads/2020/08/tiger-jpg.jpg",
+      "id": "5"
+    }
+  ]
+}
